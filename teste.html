@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { margin: 0; overflow: hidden; }
+    iframe { width: 100vw; height: 100vh; border: none; }
+  </style>
+</head>
+<body>
+
+<iframe id="tela"></iframe>
+
+<script>
+  const dashboards = [
+    "https://app.powerbi.com/groups/07c0a2d3-d33b-4a12-a36e-5aa401d6d343/reports/481d156a-02e1-44b7-bbeb-9a2858a8d8d2/7a0acbc9ad220307cc43?bookmarkGuid=5040a4e3-9242-4bd2-82e0-18e7bd308ddc&bookmarkUsage=1&chromeless=1",
+    "https://app.powerbi.com/groups/07c0a2d3-d33b-4a12-a36e-5aa401d6d343/reports/481d156a-02e1-44b7-bbeb-9a2858a8d8d2/25891f9a74eff4a45a72?bookmarkGuid=3f4b1040-215e-4a98-992d-2e720752b858&bookmarkUsage=1&chromeless=1"
+  ];
+
+  let index = 0;
+
+  function trocarDashboard() {
+    document.getElementById("tela").src = dashboards[index];
+    index = (index + 1) % dashboards.length;
+  }
+
+  trocarDashboard();
+  setInterval(trocarDashboard, 15000); // troca a cada 15 segundos
+</script>
+
+</body>
+</html>
